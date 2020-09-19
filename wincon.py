@@ -9,8 +9,12 @@ class Screen(object):
         self.size = (self.x, self.y)
         self.center = (self.x//2, self.y//2)
     def Max(self):
-        os.environ['SDL_VIDEO_WINDOW_POS']="%d,%d" %(0,0)
-        surface=pygame.display.set_mode(self.size, 0, 32)
+        os.environ['SDL_VIDEO_WINDOW_POS']= "%d,%d" %(0,0)
+        surface = pygame.display.set_mode(self.size, 0, 32)
+    def Mid(self):
+        os.environ['SDL_VIDEO_WINDOW_POS']= "%d,%d" %(self.center)
+        surface = pygame.display.set_mode(self.center, 0, 32)
     def Min(self):
-        os.environ['SDL_VIDEO_WINDOW_POS']="%d,%d" %(self.center)
-        surface=pygame.display.set_mode(self.center, 0, 32)
+        os.environ['SDL_VIDEO_WINDOW_POS']= "%d,%d" %(0,0)
+        surface = pygame.display.set_mode((0, 0), NOFRAME, 32)
+        
